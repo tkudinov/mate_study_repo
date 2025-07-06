@@ -1,0 +1,37 @@
+
+name: Educational task
+run-name: ${{ github.actor }}
+env:
+  GITHUB_ACTIONS: MY_WORKFLOW
+# Controls when the workflow will run
+on:
+  pull_request:
+    branches: [ "main" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    name: github-task-job by ${{ github.actor }}
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v4
+
+  
+      - name: Show GITHUB_ACTIONS value
+        run: echo "${{ env.GITHUB_ACTIONS }}"
+
+      - name: Show branch and repository
+        run: |
+          echo "Branch name: ${{ github.ref }}"
+          echo "Repo name: ${{ github.repository }}"
+
+      - name: Show trigger event
+        run: echo "Event name is ${{github.event_name}}"
