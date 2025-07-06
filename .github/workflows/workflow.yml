@@ -34,5 +34,4 @@ jobs:
           echo "Repo name: ${{ github.repository }}"
 
       - name: Show trigger event
-        run: echo "Event name: ${{ github.event_name }}"
-        
+        run: echo "Event name is ${{github.event_name}}"
