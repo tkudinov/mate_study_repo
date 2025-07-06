@@ -1,6 +1,6 @@
-# This is a basic workflow to help you get started with Actions
 
-name: github-task-job by ${{ github.actor }}
+name: github-task-job
+run-name: ${{ github.actor }}
 
 # Controls when the workflow will run
 on:
@@ -26,13 +26,13 @@ jobs:
 
   
       - name: Show GITHUB_ACTIONS value
-        run: echo $GITHUB_ACTIONS
+        run: echo Value is: $GITHUB_ACTIONS
 
       - name: Show branch and repository
         run: |
-          echo ${{ github.ref_name }}
-          echo ${{ github.repository }}
+          echo Branch name: ${{ github.ref }}
+          echo Repo name: ${{ github.repository }}
 
       - name: Show trigger event
-        run: echo ${{ github.event_name }}
+        run: echo  Event name: ${{ github.event_name }}
         
