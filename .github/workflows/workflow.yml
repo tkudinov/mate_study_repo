@@ -26,7 +26,7 @@ jobs:
 
   
       - name: Show GITHUB_ACTIONS value
-        run: echo "Value is: ${{ env.GITHUB_ACTIONS }}"
+        run: echo "${{ env.GITHUB_ACTIONS }}"
 
       - name: Show branch and repository
         run: |
